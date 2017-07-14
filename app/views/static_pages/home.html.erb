@@ -1,34 +1,82 @@
 <% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="stats">
-        <%= render 'shared/stats' %>
-      </section>
-      <section class="micropost_form">
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <h3>Micropost Feed</h3>
-      <%= render 'shared/feed' %>
-    </div>
-  </div>
+	<div class="row">
+	<aside class="col-md-4">
+		<section class="user_info">
+		<%= render 'shared/user_info' %>
+		</section>
+		<section class="stats">
+		<%= render 'shared/stats' %>
+		</section>
+		<section class="micropost_form">
+		<%= render 'shared/micropost_form' %>
+		</section>
+	</aside>
+	<div class="col-md-8">
+		<h3>Micropost Feed</h3>
+		<%= render 'shared/feed' %>
+	</div>
+	</div>
 <% else %>
-  <div class="center jumbotron">
-    <h1>Welcome to the Sample App</h1>
+	<div class="center jumbotron">
+		<div class="card">
+		<img src="/w3images/team2.jpg" alt="John" style="width:100%">
+			<div class="container">
+				<h1>John Doe</h1>
+			    <p class="title">CEO & Founder, Example</p>
+			    <p>Harvard University</p>
+			    <div style="margin: 24px 0;">
+			      <a href="#"><i class="fa fa-dribbble"></i></a> 
+			      <a href="#"><i class="fa fa-twitter"></i></a>  
+			      <a href="#"><i class="fa fa-linkedin"></i></a>  
+			      <a href="#"><i class="fa fa-facebook"></i></a> 
+				</div>
+		   <p><button>Contact</button></p>
+		 	</div>
+		</div>
+	</div>
 
-    <h2>
-      This is the home page for the
-      <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
-    </h2>
+	<%= link_to image_tag("NodejsLogo.png", id: "node-logo", class: "dev-logo"), controller: 'articles' %>
+	<%= link_to image_tag("RubyonRailsLogo.jpeg", id: "ruby-logo", class: "dev-logo"), root_path %>
+	<%= link_to image_tag("ReactJSLogo.png", id: "react-logo", class: "dev-logo"), root_path %>
+	<%= link_to image_tag("AngularjsLogo.png", id: "angular-logo", class: "dev-logo"), root_path %>
 
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-  </div>
+<!--		<h2>
+		This is the home page for the
+		<a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+		sample application.
+	</h2>
+	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary center" %>
 
-  <%= link_to image_tag("rails.png", alt: "Rails logo"),
-              'http://rubyonrails.org/' %>
+
+	<%= link_to image_tag("alvin.jpg", class: "img_logo", alt: "Rails logo"),
+				'http://rubyonrails.org/' %>
+	<div class = "overview">          
+	I’m a full-stack <strong>Ruby on Rails</strong> developer with extensive experience in building high quality sites.<br />
+
+My experiences range from building small web sites that work well cross-browser to building scalable sites for the financial services industry using Ruby on Rails. I like working on projects with a team that cares about creating beautiful and usable interfaces.
+
+It's important to me to build long term relationships with clients, so I'm primarily looking for long term projects.
+
+I'm flexible with my working hours and am happy to work closely with any existing freelancers you work with.<br />
+
+My skills are defined by below.<br />
+	1. Front-end: AngularJS, jQuery, AJAX, CSS3/SCSS, HTML5,  Bootstrap<br />
+	 2.Back-end: PHP, NodeJS,CodeIgniter, ReactJS,MongoDB, MySQL,Ruby on Rails,etc.<br />
+
+I look forward to hearing from you!
+</div>
+My Experiences
+<script>
+$(document).on('turbolinks:load', function () {
+	$('#slider').nivoSlider();
+});
+</script>
+
+
+	<%= nivo_slider id: "slider" do %>
+		<%= image_tag "Foo.png", data_thumb: "Foo.png" ,title: "A very nice photo!" %>
+		<%= image_tag "Bar.png", data_thumb: "Bar.png" ,title: "gallery" %>
+	 <% end %>
+-->
+		
 <% end %>
